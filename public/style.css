@@ -1,0 +1,226 @@
+:root {
+    --bg: #fce3ec;
+    --text: #212529;
+    --card-bg-odd: linear-gradient(135deg, #f7971e, #ffd200);
+    --card-bg-even: linear-gradient(135deg, #00c6ff, #0072ff);
+    --message-bg: rgba(255, 255, 255, 0.2);
+    --footer-text: rgba(255, 255, 255, 0.85);
+}
+
+/* Dark mode variables */
+body.dark-mode {
+    --bg: #121212;
+    --text: #f0f0f0;
+    --card-bg-odd: linear-gradient(135deg, #4b6cb7, #182848);
+    --card-bg-even: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --message-bg: rgba(255, 255, 255, 0.1);
+    --footer-text: rgba(255, 255, 255, 0.6);
+}
+/* Inside your style.css — add this at the end or inside dark-mode section */
+
+/* Apply light glow in dark mode */
+body.dark-mode .chat-card {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 
+                0 8px 30px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* General styling */
+body {
+    background: var(--bg);
+    font-family: 'Poppins', sans-serif;
+    padding: 2rem;
+    color: var(--text);
+    transition: all 0.3s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Toggle button */
+.toggle-container {
+    text-align: right;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.toggle-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background: #555;
+}
+
+/* Chat layout */
+.chat-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.chat-card {
+    padding: 1.2rem 1.5rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-card:nth-child(odd) {
+    background: var(--card-bg-odd);
+}
+
+.chat-card:nth-child(even) {
+    background: var(--card-bg-even);
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.chat-message {
+    background: var(--message-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text);
+}
+
+.chat-footer {
+    text-align: right;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--footer-text);
+}
+/* Toggle Container */
+.toggle-container {
+  text-align: right;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+/* Spinning animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Perfect Circular Button */
+.toggle-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #333, #555);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: spin 3s linear infinite;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+/* Icon Style */
+.toggle-icon {
+  font-size: 1.2rem;
+  color: #fff;
+  pointer-events: none;
+}
+
+
+/* Global */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode */
+body.dark-mode {
+    --bg: #121212;
+    --text: #f0f0f0;
+    --header-bg: #1e1e1e;
+    --footer-bg: #1e1e1e;
+}
+
+/* Header */
+header {
+    background: var(--header-bg, #f8f9fa);
+    color: var(--text);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background: var(--footer-bg, #f8f9fa);
+    color: var(--text);
+    border-radius: 20px 20px 0 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Toggle button */
+.toggle-btn {
+    background: linear-gradient(to right, #333, #555);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.6s ease, background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-btn:hover {
+    background: #777;
+}
+
+/* Chat card */
+.chat-card {
+    background: var(--card-bg, #fff);
+    color: var(--text);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Button Styling */
+button.btn {
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+
